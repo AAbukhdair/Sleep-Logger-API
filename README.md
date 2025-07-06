@@ -1,0 +1,2 @@
+# Sleep-Logger-API
+This project is a Flask based web application designed to help users track and analyze their sleep patterns. It features secure user accounts with password authentication, a personalized dashboard to log new sleep entries (automatically calculating wakeup time), and a dynamic bar chart that visualizes sleep hours over time with conditional coloring (red for under slept, green for optimal, orange for overslept). Users can also edit and delete their individual sleep records. Data is persisted using CSV files.
