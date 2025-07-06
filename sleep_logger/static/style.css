@@ -1,0 +1,170 @@
+/* static/style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #e9eff5; /* Light blue-grey background */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px; /* Slightly wider container */
+    margin: 30px auto; /* More margin top/bottom */
+    background-color: #ffffff;
+    padding: 30px; /* More padding */
+    border-radius: 12px; /* Softer rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+}
+
+h1 {
+    color: #2c3e50; /* Darker blue for main heading */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger heading */
+}
+
+h2 {
+    color: #34495e; /* Slightly lighter blue for subheadings */
+    border-bottom: 2px solid #aec6cf; /* Subtle underline */
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout for inputs */
+    gap: 15px; /* More space between elements */
+    margin-bottom: 30px; /* More space below form */
+    padding: 25px; /* More padding */
+    border: 1px solid #c0d9ea; /* Lighter border */
+    border-radius: 10px; /* Softer rounded corners */
+    background-color: #f8fcff; /* Very light blue background for form */
+}
+
+form label {
+    font-weight: bold;
+    color: #4a6c8a; /* Darker blue for labels */
+    margin-bottom: -5px; /* Pull label closer to input */
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="time"],
+form input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 12px; /* More padding */
+    border: 1px solid #a9cce3; /* Softer border color */
+    border-radius: 6px; /* Slightly more rounded */
+    font-size: 1em;
+    transition: border-color 0.3s ease; /* Smooth transition on focus */
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form input[type="time"]:focus,
+form input[type="date"]:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+form button {
+    padding: 12px 20px; /* More padding */
+    color: white;
+    border: none;
+    border-radius: 6px; /* Softer rounded corners */
+    cursor: pointer;
+    font-size: 1.1em; /* Slightly larger font */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    margin-top: 10px; /* Space above buttons */
+}
+
+/* Specific button styles */
+#submitButton {
+    background-color: #007bff; /* Blue */
+}
+#submitButton:hover {
+    background-color: #0056b3;
+}
+#submitButton.update-mode { /* Class added by JS for update */
+    background-color: #28a745; /* Green */
+}
+#submitButton.update-mode:hover {
+    background-color: #218838;
+}
+
+.cancel-button {
+    background-color: #6c757d; /* Gray */
+}
+.cancel-button:hover {
+    background-color: #5a6268;
+}
+
+.edit-button {
+    background-color: #ffc107; /* Yellow */
+    color: #333;
+    margin-right: 5px;
+    padding: 8px 12px; /* Smaller padding for action buttons */
+    font-size: 0.9em;
+}
+.edit-button:hover {
+    background-color: #e0a800;
+}
+
+.delete-button {
+    background-color: #dc3545; /* Red */
+    color: white;
+    padding: 8px 12px; /* Smaller padding for action buttons */
+    font-size: 0.9em;
+}
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+#sleepRecords {
+    list-style: none;
+    padding: 0;
+}
+
+#sleepRecords li {
+    background-color: #f0f8ff; /* Very light blue for list items */
+    margin-bottom: 12px; /* More space between list items */
+    padding: 15px; /* More padding */
+    border-radius: 8px; /* Softer rounded corners */
+    border: 1px solid #e0eff7; /* Light border */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+#sleepRecords li strong {
+    color: #34495e; /* Darker blue for labels */
+}
+
+#sleepRecords li .actions {
+    display: flex;
+    gap: 8px; /* More space between buttons */
+}
+
+/* Styles for messages/alerts if any */
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}

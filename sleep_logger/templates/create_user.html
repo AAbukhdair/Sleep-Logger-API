@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User - Sleep Logger</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Reusing some user_selection-container styles from user_selection.html */
+        .user-creation-container {
+            max-width: 500px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .user-creation-container h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+        .user-creation-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #4a6c8a;
+        }
+        .user-creation-container input[type="text"],
+        .user-creation-container input[type="password"] { /* ADDED input[type="password"] */
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #a9cce3;
+            border-radius: 6px;
+            font-size: 1.1em;
+        }
+        .user-creation-container button {
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+        .user-creation-container button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: #dc3545;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .success-message {
+            color: #28a745;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .back-button {
+            background-color: #6c757d;
+        }
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-creation-container">
+        <h1>Create New User Account</h1>
+        <form method="POST" action="/create_user">
+            <label for="new_user_id">Choose a User ID:</label>
+            <input type="text" id="new_user_id" name="new_user_id" required>
+            
+            <label for="new_password">Choose a Password:</label> <input type="password" id="new_password" name="new_password" required>
+
+            <button type="submit">Create User</button>
+            <button type="button" class="back-button" onclick="window.location.href='/'">Back to Login</button>
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html> 

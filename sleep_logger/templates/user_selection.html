@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sleep Logger</title> <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .user-selection-container {
+            max-width: 500px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .user-selection-container h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+        .user-selection-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #4a6c8a;
+        }
+        .user-selection-container input[type="text"],
+        .user-selection-container input[type="password"] { /* ADDED input[type="password"] */
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #a9cce3;
+            border-radius: 6px;
+            font-size: 1.1em;
+        }
+        .user-selection-container button {
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+        .user-selection-container button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: #dc3545;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .success-message {
+            color: #28a745;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .create-user-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-selection-container">
+        <h1>Welcome to Sleep Logger!</h1>
+        <p>Please log in to view your dashboard:</p>
+        <form method="POST" action="/">
+            <label for="user_id">User ID:</label>
+            <input type="text" id="user_id" name="user_id" value="adam001" required>
+            
+            <label for="password">Password:</label> <input type="password" id="password" name="password" required>
+
+            <button type="submit">Log In</button>
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+            {% if message %}
+                <p class="success-message">{{ message }}</p>
+            {% endif %}
+        </form>
+        <a href="{{ url_for('create_user_page') }}" class="create-user-link">Don't have an account? Create one here!</a>
+    </div>
+</body>
+</html>
